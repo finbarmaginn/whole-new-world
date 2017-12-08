@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/finbarmaginn/whole-new-world/issues"
   },
-  "homepage": "https://github.com/finbarmaginn/whole-new-world#readme"
+  "homepage": "https://github.com/finbarmaginn/whole-new-world#readme",
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  }
 }
