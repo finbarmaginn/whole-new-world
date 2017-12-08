@@ -1,0 +1,21 @@
+{
+  "name": "whole-new-world",
+  "version": "1.0.0",
+  "description": "A repo to help me practice version control and full stack JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finbarmaginn/whole-new-world.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/finbarmaginn/whole-new-world/issues"
+  },
+  "homepage": "https://github.com/finbarmaginn/whole-new-world#readme"
+}
