@@ -2,8 +2,7 @@ const path = require('path'),
   PUBLIC = path.resolve(__dirname, 'public'),
   SRC = path.resolve(__dirname, 'src'),
   webpack = require('webpack'),
-  nodeEnv = process.env.NODE_ENV,
-  OfflinePlugin = require('offline-plugin');
+  nodeEnv = process.env.NODE_ENV;
 
 require('babel-polyfill');
 
@@ -68,71 +67,22 @@ const config = {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(nodeEnv)
-    }),
-    new OfflinePlugin({
-      safeToUseOptionalCaches: true,
-      publicPath: '/',
-      caches: {
-        main: [
-          'vendor.js',
-          'main.js'
-        ],
-        additional: [':externals:']
-      },
-      externals: [
-        '/',
-        '/index.html',
-        '/images/',
-        '/images/The Light of Other Days cover - Slider.jpg',
-        '/images/Stewart Rosie - Slider.jpg',
-        '/images/McKeegan Archie 2 - Slider.jpg',
-        '/images/MacColl Ewan - Slider.jpg',
-        '/images/Stiubhard Daibhidh - Slider.jpg',
-        '/images/Russell Micho 1 - Slider.jpg',
-        '/images/Cathal McConnell sq - Slider.jpg',
-        '/images/Gunn Tommy - Slider.jpg',
-        '/images/Young Rohan - Slider.jpg',
-        '/images/NíUallacháin Eithne - Slider.jpg',
-        '/images/Barry Maggie - Slider.jpg',
-        '/images/Cullen Paddy 2012 - Slider.jpg',
-        '/images/Hanna Geordie - Slider.jpg',
-        '/images/Keenan Tommy - Slider.jpg',
-        '/images/Wilkinson Desi - Slider.jpg',
-        '/images/Carson Ciaran 2012 - Slider.jpg',
-        '/images/Tansey Seamus - Slider.jpg',
-        '/images/Clifford Julia - Slider.jpg',
-        '/images/Gavin Frankie - Slider.jpg',
-        '/images/McGoldrick Hugh - Slider.jpg',
-        '/images/Keenan Tommy - Medium.jpg',
-        '/images/McGoldrick Hugh - Medium.jpg',
-        '/images/Gunn Brendan and Tommy - Medium.jpg',
-        '/images/Gillespie Sheila 1 - Medium.jpg',
-        '/images/Hanna Geordie - Medium.jpg',
-        '/images/MacColl Ewan - Medium.jpg',
-        '/images/Murray Sam - Medium.jpg',
-        '/images/Barry Maggie - Medium.jpg'
-      ],
-      ServiceWorker: {
-        navigateFallbackURL: '/',
-        events: true,
-      },
-      AppCache: {
-        FALLBACK: {
-          '/': '/index.html'
-        }
-      }
-    }),
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery"
     })
   ]
 };
 
-const isProd = (nodeEnv === 'production');
+/*
+  implement jQuery in plugins array,
 
-if (isProd) {
+  new webpack.ProvidePlugin({
+    $: "jquery",
+    jQuery: "jquery",
+    "window.jQuery": "jquery"
+  })
+*/
+
+  
+if (nodeEnv === 'production') {
   config.plugins.push(
     new webpack.optimize.UglifyJsPlugin()
   )
