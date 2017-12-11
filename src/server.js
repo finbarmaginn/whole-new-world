@@ -1,22 +1,26 @@
 import express from 'express'
 import React from 'react'
+import {createStore} from 'redux'
+import { Provider } from 'react-redux'
 import {renderToString} from 'react-dom/server'
 import App from './App'
 import template from './template'
+import store from './app/reducers'
 
 const PORT = process.env.PORT || 8080,
-  server = express(),
-  initialState = {
-    username: "Finbar"
-  }
+  server = express();
 
 server.use('/dist', express.static('dist'));
 server.get('/', (req, res) => {
-  const appString = renderToString(<App {...initialState}/>);
+  const appString = renderToString(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
   res.send(template({
     body: appString,
     title: 'Foo Bar',
-    initialState: JSON.stringify(initialState)
+    store: JSON.stringify(store.getState())
   }));
 });
 

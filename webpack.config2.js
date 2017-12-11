@@ -29,7 +29,12 @@ var path = require('path'),
     }],
     clientConfig = {
       name: 'client',
-      entry: SRC + '/app/browser.js',
+      entry: {
+        main: [
+          SRC + '/app/browser.js',
+          SRC + '/app/scss/style.scss'
+        ]
+      },
       output: {
         path: DIST,
         filename: 'client.js'
@@ -56,14 +61,29 @@ var path = require('path'),
 
 if(ENV === 'development'){
   clientConfig.plugins.push(
-    new LiveReloadPlugin()
+    new LiveReloadPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('development')
+      }
+    })
   )
 } else if (ENV === 'production'){
   clientConfig.plugins.push(
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
   )
   serverConfig.plugins.push(
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
   )
 }
 
