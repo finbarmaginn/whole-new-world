@@ -1,9 +1,9 @@
 // import react
-var app = require('../');
+var app = require('../app');
 var debug = require('debug')('whole-new-world');
 var http = require('http');
-var port = normalizePort(process.env.PORT || '3000');
 
+var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 var server = http.createServer(app);

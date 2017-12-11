@@ -7,12 +7,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 // import routes
-
 var app = express()
 
 // view engine setup here:
-// app.set('views', path.join(__dirname, 'views'))
-// app.use('view engine', 'jade') - maybe choose a different templating system
+app.set('views', path.join(__dirname, 'src/views'))
+app.set('view engine', 'ejs')
 
 // favicon setup
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -25,7 +24,7 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 
 // set up static public folder use for devDependencies
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(__dirname + '/public'));
 
 // tell express what templates to use for what routes
 // app.use('/', index);
@@ -34,7 +33,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // serve static index for now
 // TODO: set up dynamically generate index.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/index.html'))
+  res.render('index', {
+    user: "Finbar Maginn"
+  })
+  // static index.html
+  // res.sendFile(path.join(__dirname + '/index.html'))
 })
 
 // catch 404 and forward to error handler
