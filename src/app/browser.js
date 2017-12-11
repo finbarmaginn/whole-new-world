@@ -17,6 +17,3 @@ hydrate(
   </Provider>,
   document.getElementById("app")
 );
-// TODO: redux
-// TODO: reducers & actions etc
-// TODO: Server and client side rendering
