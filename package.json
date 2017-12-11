@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prod": "webpack --config webpack.config2.js --progress -p",
     "dev": "webpack --config webpack.config2.js --watch --progress",
     "server": "nodemon ./dist/server.js",
-    "start": "concurrently \"npm run dev\" \"npm run server\""
+    "start": "concurrently \"npm run prod\" \"npm run server\"",
+    "develop": "concurrently \"npm run dev\" \"npm run server\""
   },
   "repository": {
     "type": "git",

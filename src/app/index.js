@@ -1,10 +1,8 @@
-// top of react tree
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {appResize} from './actions'
 import Header from './components/Header'
 import Footer from './components/Footer'
-// require('./css/style.css')
 
 @connect((store) => {
   return {
@@ -24,13 +22,12 @@ class App extends Component {
     this.props.dispatch(appResize(window.innerWidth, window.innerHeight))
   }
   render(){
+    let {windowWidth, windowHeight} = this.props
     return(
       <div>
         <Header />
         <section>
-          <p>
-            {this.props.windowWidth} + {this.props.windowHeight}
-          </p>
+          <p>{windowWidth} + {windowHeight}</p>
         </section>
         <Footer />
       </div>

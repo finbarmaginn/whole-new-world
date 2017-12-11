@@ -5,7 +5,11 @@ class Header extends React.Component{
     return (
       <footer>
         <section>
-          <p>footer component</p>
+          <p>
+            Footer Component
+            <br />
+            <span>Finbar Maginn</span>
+          </p>
         </section>
       </footer>
     )

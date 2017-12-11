@@ -26,14 +26,14 @@ var path = require('path'),
         ],
         'plugins': ['transform-decorators-legacy']
       }
-    }],
-    clientConfig = {
+    }];
+
+var clientConfig = {
       name: 'client',
       entry: {
         main: [
           SRC + '/app/browser.js',
-          SRC + '/app/scss/style.scss'
-        ]
+          SRC + '/app/scss/style.scss'        ]
       },
       output: {
         path: DIST,
