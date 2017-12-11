@@ -1,10 +1,17 @@
+let ENV = process.env.NODE_ENV;
+
+function livereloader(){
+  if(ENV === "development"){
+    return `<script src="http://localhost:35729/livereload.js"></script>`
+  } return ``
+}
 export default ({ body, title }) => {
   return `
     <!DOCTYPE html>
     <html>
       <head>
         <title>${title}</title>
-        <script src="http://localhost:35729/livereload.js"></script>
+        ` + livereloader() +`
       </head>
       <body>
         <div id="app">${body}</div>

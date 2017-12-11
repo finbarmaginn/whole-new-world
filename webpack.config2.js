@@ -1,6 +1,7 @@
 var path = require('path'),
   DIST = path.resolve(__dirname, 'dist'),
   SRC = path.resolve(__dirname, 'src'),
+  ENV = process.env.NODE_ENV,
   webpack = require('webpack'),
   nodeExternals = require('webpack-node-externals'),
   LiveReloadPlugin = require('webpack-livereload-plugin'),
@@ -36,9 +37,7 @@ var path = require('path'),
       module: {
         rules: loaderRules
       },
-      plugins:[
-        new LiveReloadPlugin()
-      ]
+      plugins: []
     },
     serverConfig = {
       name: 'server',
@@ -52,7 +51,20 @@ var path = require('path'),
       },
       target: "node",
       externals: [nodeExternals()],
+      plugins: []
     };
 
+if(ENV === 'development'){
+  clientConfig.plugins.push(
+    new LiveReloadPlugin()
+  )
+} else if (ENV === 'production'){
+  clientConfig.plugins.push(
+    new webpack.optimize.UglifyJsPlugin()
+  )
+  serverConfig.plugins.push(
+    new webpack.optimize.UglifyJsPlugin()
+  )
+}
 
 module.exports = [clientConfig, serverConfig]
