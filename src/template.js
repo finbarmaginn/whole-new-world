@@ -1,5 +1,5 @@
 let ENV = process.env.NODE_ENV;
-
+console.log(ENV)
 function livereloader(){
   if(ENV === "development"){
     return `<script src="http://localhost:35729/livereload.js"></script>`
