@@ -11,7 +11,7 @@ import store from './app/reducers'
 // var result = require('./app/scss/index.js')
 
 
-const PORT = process.env.PORT || 8080,
+const PORT = (process.env.PORT || 8080),
   server = express();
 
 server.use('/dist', express.static('dist'));
