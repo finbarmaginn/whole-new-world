@@ -5,14 +5,15 @@ var path = require('path'),
   webpack = require('webpack'),
   nodeExternals = require('webpack-node-externals'),
   LiveReloadPlugin = require('webpack-livereload-plugin'),
-  loaderRules = [{
-      test: /\.(css|scss)$/,
-      use: [
-        'style-loader',
-        'css-loader',
-        'sass-loader'
-      ]
-    },{
+
+  loaderRules = [  {
+        test: /\.(css|scss)$/,
+        use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader'
+        ]
+      },{
       test: /\.js$/,
       loader: 'babel-loader',
       exclude: /node_modules/,
@@ -32,8 +33,8 @@ var clientConfig = {
       name: 'client',
       entry: {
         main: [
-          SRC + '/app/browser.js',
-          SRC + '/app/scss/style.scss'        ]
+          SRC + '/app/browser.js'
+        ]
       },
       output: {
         path: DIST,
@@ -58,13 +59,14 @@ var clientConfig = {
       externals: [nodeExternals()],
       plugins: []
     };
-
+// serverConfig.
 if(ENV === 'development'){
   clientConfig.plugins.push(
     new LiveReloadPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('development')
+        'NODE_ENV': JSON.stringify('development'),
+        'BROWSER': JSON.stringify(true)
       }
     })
   )
@@ -73,7 +75,8 @@ if(ENV === 'development'){
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+        'NODE_ENV': JSON.stringify('production'),
+        'BROWSER': JSON.stringify(true)
       }
     })
   )
@@ -81,7 +84,8 @@ if(ENV === 'development'){
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+        'NODE_ENV': JSON.stringify('production'),
+        'BROWSER': JSON.stringify(false)
       }
     })
   )

@@ -3,7 +3,7 @@ import 'babel-polyfill'
 import './polyfill'
 
 // create react app
-import {Router, Route, browserHistory, IndexRoute} from 'react-router'
+// import {Router, Route, browserHistory, IndexRoute} from 'react-router'
 import React from 'react'
 import {hydrate} from 'react-dom'
 import {Provider} from 'react-redux'
@@ -13,7 +13,6 @@ import App from './index'
 import Home from './containers/Home'
 
 import Promise from 'promise-polyfill'
-
 
 if (!window.Promise) {
   window.Promise = Promise

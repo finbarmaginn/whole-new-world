@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {appResize} from './actions'
+import {appResize, initApp} from './actions'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
@@ -15,7 +15,7 @@ class App extends Component {
   componentDidMount(){
     if (typeof window !== 'undefined') {
       window.addEventListener("resize", this.viewerResize.bind(this))
-      this.viewerResize()
+      this.props.dispatch(initApp(window.innerWidth, window.innerHeight))
     }
   }
   viewerResize() {

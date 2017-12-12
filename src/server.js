@@ -1,11 +1,14 @@
 import express from 'express'
 import React from 'react'
+import Router from 'react-router'
 import {createStore} from 'redux'
 import { Provider } from 'react-redux'
 import {renderToString} from 'react-dom/server'
 import App from './App'
 import template from './template'
 import store from './app/reducers'
+
+// var result = require('./app/scss/index.js')
 
 const PORT = process.env.PORT || 8080,
   server = express();

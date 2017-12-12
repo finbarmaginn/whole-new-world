@@ -9,6 +9,12 @@ const general = function reducer(state = {
         windowWidth: action.payload.windowWidth,
         windowHeight: action.payload.windowHeight
       }
+    } case "INIT_APP": {
+      return {
+        ...state,
+        windowWidth:action.payload.windowWidth,
+        windowHeight: action.payload.windowHeight
+      }
     }
   }
   return state
