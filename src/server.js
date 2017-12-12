@@ -8,10 +8,7 @@ import App from './App'
 import template from './template'
 import store from './app/reducers'
 
-// var result = require('./app/scss/index.js')
-
-
-const PORT = (process.env.PORT || 8080),
+const PORT = (process.env.PORT || 5000),
   server = express();
 
 server.use('/dist', express.static('dist'));
