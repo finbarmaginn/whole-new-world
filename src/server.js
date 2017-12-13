@@ -16,7 +16,7 @@ import About from './app/containers/About'
 import Header from './app/components/Header'
 import Footer from './app/components/Footer'
 
-const PORT = (process.env.PORT || 8080),
+const PORT = normalizePort(process.env.PORT || 8080),
   server = express();
 
 server.use('/dist', express.static('dist'));
