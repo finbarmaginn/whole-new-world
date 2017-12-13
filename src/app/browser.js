@@ -4,14 +4,14 @@ import './polyfill'
 import Promise from 'promise-polyfill'
 import {
   BrowserRouter as Router,
-  Route,
-  Link
+  Route
 } from 'react-router-dom'
 
 // create react app
 import React from 'react'
 import {hydrate} from 'react-dom'
 import {Provider} from 'react-redux'
+import createStore from 'redux'
 import store from './reducers'
 import App from './index'
 import Header from './components/Header'

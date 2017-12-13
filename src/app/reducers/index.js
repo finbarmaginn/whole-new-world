@@ -14,7 +14,8 @@ if (process.env.NODE_ENV === "development") {
 
 const store = createStore(
   combineReducers({
-    general: general
+    general: general,
+    routing: routerReducer
   }),
   compose(
     applyMiddleware(...middlewares, promise(), thunk)
