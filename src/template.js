@@ -5,7 +5,7 @@ function livereloader(){
     return `<script src="http://localhost:35729/livereload.js"></script>`
   } return ``
 }
-export default ({ body, title, style, store }) => {
+export default ({ body, title, store }) => {
   return `
     <!DOCTYPE html>
     <html>

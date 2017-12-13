@@ -4,6 +4,14 @@ body {
   font-size: 110%;
 }
 
+h1, h2, h3, h4, h5, h6, p, nav {
+  margin: 20px 0;
+}
+
+img {
+  max-width: 100%;
+}
+
 section {
   max-width: 768px;
   margin: 0 auto;
@@ -24,8 +32,8 @@ nav {
   overflow: hidden;
   display: block;
   ul {
+    margin:0;
     padding: 0;
-    margin: 0;
     list-style-type: none;
     display: block;
     li {

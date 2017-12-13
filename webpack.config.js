@@ -32,7 +32,8 @@ var clientConfig = {
   name: 'client',
   entry: {
     main: [
-      SRC + '/app/browser.js'
+      SRC + '/app/browser.js',
+      SRC + '/app/scss/style.scss'
     ]
   },
   output: {
@@ -42,7 +43,14 @@ var clientConfig = {
   module: {
     rules: loaderRules
   },
-  plugins: []
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(ENV),
+        'BROWSER': JSON.stringify(true)
+      }
+    })
+  ]
 }
 
 var serverConfig = {
@@ -57,47 +65,27 @@ var serverConfig = {
   },
   target: "node",
   externals: [nodeExternals()],
-  plugins: []
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(ENV),
+        'BROWSER': JSON.stringify(false)
+      }
+    })
+  ]
 };
 
 if (ENV === 'development') {
   clientConfig.plugins.push(
-    new LiveReloadPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('development'),
-        'BROWSER': JSON.stringify(true)
-      }
-    })
-  )
-  serverConfig.plugins.push(
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('development'),
-        'BROWSER': JSON.stringify(false)
-      }
-    })
-  )
-
+    new LiveReloadPlugin()
+  );
 } else if (ENV === 'production') {
   clientConfig.plugins.push(
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production'),
-        'BROWSER': JSON.stringify(true)
-      }
-    })
-  )
+    new webpack.optimize.UglifyJsPlugin()
+  );
   serverConfig.plugins.push(
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production'),
-        'BROWSER': JSON.stringify(false)
-      }
-    })
-  )
+    new webpack.optimize.UglifyJsPlugin()
+  );
 }
 
 module.exports = [clientConfig, serverConfig]
