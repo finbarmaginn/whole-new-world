@@ -43,6 +43,7 @@ server.get('*', (req, res) => {
     store: JSON.stringify(store.getState())
   }));
 });
+
 server.listen(PORT, function() {
   console.log('Express server running at localhost:' + PORT)
 });
