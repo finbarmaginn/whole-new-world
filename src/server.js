@@ -9,7 +9,7 @@ import {
 import { renderToString } from 'react-dom/server'
 import template from './template'
 import store from './app/reducers'
-import App from './App'
+import App from './app'
 import Home from './app/containers/Home'
 import Gallery from './app/containers/Gallery'
 import About from './app/containers/About'
