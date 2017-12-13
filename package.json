@@ -6,7 +6,7 @@
   "scripts": {
     "prod": "cross-env NODE_ENV=production webpack --progress -p",
     "dev": "cross-env NODE_ENV=development webpack --watch --progress",
-    "server": "node ./dist/server.js",
+    "server": "nodemon ./dist/server.js",
     "devServer": "cross-env NODE_ENV=development nodemon ./dist/server.js",
     "start": "concurrently \"npm run prod\" \"npm run server\"",
     "startDev": "concurrently \"npm run dev\" \"npm run devServer\""
