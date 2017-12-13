@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {appResize, initApp} from './actions'
 
+if(process.env.BROWSER) require('./scss/style.scss')
+
 @connect((store) => {
   return {
     windowWidth: store.general.windowWidth,

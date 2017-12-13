@@ -32,8 +32,7 @@ var clientConfig = {
   name: 'client',
   entry: {
     main: [
-      SRC + '/app/browser.js',
-      SRC + '/app/scss/style.scss'
+      SRC + '/app/browser.js'
     ]
   },
   output: {
