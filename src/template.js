@@ -10,9 +10,10 @@ export default ({ body, title, store }) => {
     <!DOCTYPE html>
     <html>
       <head>
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <title>${title}</title>
-        ` + livereloader() +`
+        <link rel="shortcut icon" href="favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>${title}</title>
+        ` + livereloader() + `
       </head>
       <body>
         <div id="app">${body}</div>

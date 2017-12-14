@@ -6,6 +6,11 @@ var path = require('path'),
   nodeExternals = require('webpack-node-externals'),
   LiveReloadPlugin = require('webpack-livereload-plugin'),
   loaderRules = [{
+    test:/\.ico$/,
+    use: [
+      'file-loader?name=[name].[ext]'
+    ]
+  },{
     test: /\.(css|scss)$/,
     use: [
       'style-loader',
