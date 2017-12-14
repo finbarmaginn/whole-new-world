@@ -4,12 +4,12 @@ import {appResize, initApp} from './actions'
 
 if(process.env.BROWSER){
   require('./scss/style.scss')
-  require('./icons/favicon.ico')
 }
-
-// get manifest for PWA
+require('./icons/favicon.ico')
 require('./icons/splat-512.png')
 require('./manifest.json')
+
+
 
 @connect((store) => {
   return {
