@@ -23,6 +23,10 @@ if (!window.Promise) {
   window.Promise = Promise
 }
 
+require('./icons/favicon.ico')
+require('./icons/splat-144.png')
+require('./icons/splat-512.png')
+require('./manifest.json')  
 
 hydrate(
   <Provider store={store}>
