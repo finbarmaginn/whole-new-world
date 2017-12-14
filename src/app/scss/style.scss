@@ -24,6 +24,56 @@ section {
   display: block;
   position: relative;
 }
+header {
+  background: black;
+  color:white;
+  section {
+    position: relative;
+    h1 {
+      display: inline-block;
+      a {
+        text-decoration: none;
+        color:white;
+      }
+      span {
+        font-size: 0.8em
+      }
+    }
+
+    nav {
+      float:right;
+      height: auto;
+      overflow: hidden;
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      ul {
+        margin:0;
+        padding: 0;
+        list-style-type: none;
+        display: block;
+        li {
+          display: inline-block;
+          padding:10px 0;
+          a {
+            padding: 10px;
+            color:white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+footer {
+  text-align: center;
+  border-top: solid 1px #d6d6d6;
+  p {
+    font-size:0.8em;
+    color:#737373
+  }
+}
 
 h2 {
   font-size: 1.15em

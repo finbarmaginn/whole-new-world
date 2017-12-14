@@ -5,11 +5,12 @@ function livereloader(){
     return ``
   } return ``
 }
-export default ({ body, title, store }) => {
+export default ({ body, title, store, style }) => {
   return `
     <!DOCTYPE html>
     <html lang="en">
       <head>
+        <style>${style}</style>
         <link rel="shortcut icon" href="favicon.ico">
         <link rel="manifest" href="manifest.json">
         <link rel="icon" type="png" sizes="512x512" href="splat-512.png">
@@ -26,6 +27,7 @@ export default ({ body, title, store }) => {
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="msapplication-starturl" content="/">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>${title}</title>
       </head>
       <body>

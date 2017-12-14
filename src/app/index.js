@@ -10,7 +10,7 @@ if(process.env.BROWSER){
 // PWA Stuff
 // TODO: implement service worker
 // TODO: implement offline fallback
-// TODO: 
+// TODO:
 
 @connect((store) => {
   return {
@@ -30,6 +30,7 @@ class App extends Component {
   viewerResize() {
     this.props.dispatch(appResize(window.innerWidth, window.innerHeight))
   }
+  
   render(){
     let {windowWidth, windowHeight} = this.props
     return(

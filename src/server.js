@@ -15,10 +15,15 @@ import Gallery from './app/containers/Gallery'
 import About from './app/containers/About'
 import Header from './app/components/Header'
 import Footer from './app/components/Footer'
-import favicon from 'express-favicon'
+import sassExtract from 'sass-extract'
 
 const PORT = (process.env.PORT || 5000),
-  server = express();
+  server = express(),
+  sass = require('node-sass'),
+  result = sass.renderSync({
+    file: './src/app/scss/style.scss'
+  });
+
 
 server.use('/dist', express.static('dist'));
 server.use('/favicon.ico', express.static('dist/assets/favicon.ico'));
@@ -26,6 +31,7 @@ server.use('/splat-144.png', express.static('dist/assets/splat-144.png'));
 server.use('/splat-512.png', express.static('dist/assets/splat-512.png'));
 server.use('/manifest.json', express.static('dist/assets/manifest.json'));
 // sort out manifest
+
 server.get('*', (req, res) => {
   const appString = renderToString(
     <Provider store={store}>
@@ -42,14 +48,13 @@ server.get('*', (req, res) => {
       </App>
     </Provider>
   );
-
   res.send(template({
     body: appString,
     title: 'Finbar\'s Isomorphic React App',
-    store: JSON.stringify(store.getState())
+    store: JSON.stringify(store.getState()),
+    style: result.css.toString()
   }));
 });
-
 server.listen(PORT, function() {
   console.log('Express server running at localhost:' + PORT)
 });
