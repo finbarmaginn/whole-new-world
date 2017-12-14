@@ -8,7 +8,6 @@ if(process.env.BROWSER){
 }
 
 // get manifest for PWA
-require('./icons/splat-152.png')
 require('./icons/splat-512.png')
 require('./manifest.json')
 
