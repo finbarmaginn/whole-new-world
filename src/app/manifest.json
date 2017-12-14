@@ -1,0 +1,16 @@
+{
+  "name": "Finbar's Isomorphic Web App",
+  "short_name": "Finbar's Isomorph",
+  "lang": "en-GB",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#e6e6e6",
+  "background_color": "#000000",
+  "icons": [
+    {
+      "src": "splat-512.png",
+      "sizes": "512x512",
+      "type": "png"
+    }
+  ]
+}

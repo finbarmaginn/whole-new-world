@@ -21,9 +21,9 @@ const PORT = (process.env.PORT || 5000),
   server = express();
 
 server.use('/dist', express.static('dist'));
-server.use('/favicon.ico', express.static('dist/favicon.ico'));
-server.use(favicon(__dirname + '/dist/favicon.ico'))
-
+server.use('/favicon.ico', express.static('dist/assets/favicon.ico'));
+server.use('/manifest.json', express.static('dist/assets/manifest.json'));
+// sort out manifest
 server.get('*', (req, res) => {
   const appString = renderToString(
     <Provider store={store}>

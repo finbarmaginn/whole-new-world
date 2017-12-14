@@ -6,9 +6,14 @@ var path = require('path'),
   nodeExternals = require('webpack-node-externals'),
   LiveReloadPlugin = require('webpack-livereload-plugin'),
   loaderRules = [{
-    test:/\.ico$/,
+    test:/\.(ico|json|png)$/,
     use: [
-      'file-loader?name=[name].[ext]'
+      {
+        loader:'file-loader',
+        options: {
+          name: 'assets/[name].[ext]'
+        }
+      }
     ]
   },{
     test: /\.(css|scss)$/,
