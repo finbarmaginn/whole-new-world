@@ -10,10 +10,13 @@ export default ({ body, title, store }) => {
     <!DOCTYPE html>
     <html lang="en">
       <head>
-        <link rel="shortcut icon" href="dist/assets/favicon.ico">
-        <link rel="manifest" href="dist/assets/manifest.json">
-        <link rel="icon" type="png" sizes="512x512" href="dist/assets/splat-512.png">
-        <link rel="apple-touch-icon" type="png" sizes="512x512" href="dist/assets/splat-512.png">
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="manifest" href="manifest.json">
+        <link rel="icon" type="png" sizes="512x512" href="splat-512.png">
+        <link rel="apple-touch-icon" type="png" sizes="512x512" href="splat-512.png">
+        <link rel="icon" type="png" sizes="144x144" href="splat-144.png">
+        <link rel="apple-touch-icon" type="png" sizes="144x144" href="splat-144.png">
+
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="application-name" content="Finbar's Isomorph">
@@ -24,7 +27,6 @@ export default ({ body, title, store }) => {
         <meta name="msapplication-starturl" content="/">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>${title}</title>
-        ` + (ENV === "development" ? `<script src="http://localhost:35729/livereload.js"></script>`:``) + `
       </head>
       <body>
         <div id="app">${body}</div>
@@ -34,6 +36,7 @@ export default ({ body, title, store }) => {
             window.__PRELOADED_STATE__ = ${JSON.stringify(store).replace(/</g, '\\u003c')}
           </script>
           <script src="./dist/client.js"></script>
+          ` + (ENV === "development" ? `<script src="http://localhost:35729/livereload.js"></script>`:``) + `
       </body>
     </html>
   `;

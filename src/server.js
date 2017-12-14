@@ -22,6 +22,8 @@ const PORT = (process.env.PORT || 5000),
 
 server.use('/dist', express.static('dist'));
 server.use('/favicon.ico', express.static('dist/assets/favicon.ico'));
+server.use('/splat-144.png', express.static('dist/assets/splat-144.png'));
+server.use('/splat-512.png', express.static('dist/assets/splat-512.png'));
 server.use('/manifest.json', express.static('dist/assets/manifest.json'));
 // sort out manifest
 server.get('*', (req, res) => {
