@@ -1,7 +1,9 @@
 import React from 'react'
 
+if(process.env.BROWSER) require('./home.scss')
+
 class Home extends React.Component {
-  render(){
+  render() {
     return (
       <section>
         <h3>Home</h3>

@@ -1,7 +1,9 @@
 import React from 'react'
 
-class Header extends React.Component{
-  render(){
+if (process.env.BROWSER) require('./footer.scss')
+
+class Header extends React.Component {
+  render() {
     return (
       <footer>
         <section>

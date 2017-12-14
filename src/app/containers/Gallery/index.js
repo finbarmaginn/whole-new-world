@@ -1,7 +1,9 @@
 import React from 'react'
 
+if (process.env.BROWSER) require('./gallery.scss')
+
 class Gallery extends React.Component {
-  render(){
+  render() {
     return (
       <section>
         <h3>Gallery</h3>
