@@ -7,6 +7,10 @@ if(process.env.BROWSER){
 } else {
 }
 
+// PWA Stuff
+// TODO: implement service worker
+// TODO: implement offline fallback
+// TODO: 
 
 @connect((store) => {
   return {
