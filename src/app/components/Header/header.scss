@@ -1,13 +1,17 @@
 header {
   background: black;
   color:white;
-  h1 {
-    a {
-      text-decoration: none;
-      color:white;
-    }
-    span {
-      font-size: 0.8em
+  section {
+    position: relative;
+    h1 {
+      display: inline-block;
+      a {
+        text-decoration: none;
+        color:white;
+      }
+      span {
+        font-size: 0.8em
+      }
     }
   }
 }
