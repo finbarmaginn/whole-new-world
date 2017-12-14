@@ -30,6 +30,7 @@ server.use('/favicon.ico', express.static('dist/assets/favicon.ico'));
 server.use('/splat-144.png', express.static('dist/assets/splat-144.png'));
 server.use('/splat-512.png', express.static('dist/assets/splat-512.png'));
 server.use('/manifest.json', express.static('dist/assets/manifest.json'));
+server.use('/sw.js', express.static('dist/sw.js'));
 // sort out manifest
 
 server.get('*', (req, res) => {
