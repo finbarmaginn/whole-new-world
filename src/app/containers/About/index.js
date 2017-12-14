@@ -16,7 +16,7 @@ class About extends React.Component {
     return (
       <section>
         <h3>About</h3>
-        <p className="browserSize">{windowWidth} + {windowHeight}</p>
+        <p className="browserSize">Window Size = {windowWidth}px + {windowHeight}px</p>
       </section>
     )
   }
