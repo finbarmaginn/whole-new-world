@@ -4,9 +4,12 @@ A repo to help me practice version control and full stack JS
 _"npm i" wasnt installing devDependencies so package.json needs reviewed - could have been a local node environment issue. currently all dependencies - including webpack - are in the dependencies property of package.json_
 
 ## List of tech used (not extensive)
- - [ ] Service Worker
+ - [ ] webpack html extract thing (replace current template setup)
+ - [ ] hashed filenames
+ - [ ] Service Worker (in progress)
  - [ ] ejs / jade
  - [ ] lazy load routes
+ - [ ] some DB (mongo?)
  - [x] Webpack
  - [x] Babel (es6)
  - [x] scss
