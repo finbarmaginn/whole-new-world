@@ -15,4 +15,4 @@ A repo to help me practice version control and full stack JS
  - [x] production build config
  - [x] manifest.json
 
--"npm i" wasnt installing devDependencies so package.json needs reviewed - could have been a local node environment issue. currently all dependencies - including webpack - are in the dependencies property of package.json-
+_"npm i" wasnt installing devDependencies so package.json needs reviewed - could have been a local node environment issue. currently all dependencies - including webpack - are in the dependencies property of package.json_
