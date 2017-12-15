@@ -1,6 +1,6 @@
 import React from 'react'
 
-if (process.env.BROWSER) require('./gallery.scss')
+// if (process.env.BROWSER) require('./gallery.scss')
 
 class Gallery extends React.Component {
   render() {

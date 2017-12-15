@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-if(process.env.BROWSER) require('./about.scss')
+// if(process.env.BROWSER) require('./about.scss')
 
 @connect((store) => {
   return {

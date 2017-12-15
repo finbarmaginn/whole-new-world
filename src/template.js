@@ -1,16 +1,16 @@
 let ENV = process.env.NODE_ENV;
-console.log(ENV)
-function livereloader(){
-  if(ENV === "development"){
-    return ``
-  } return ``
-}
-export default ({ body, title, store, style }) => {
+
+export default ({
+  body,
+  title,
+  store,
+  style
+}) => {
   return `
     <!DOCTYPE html>
     <html lang="en">
       <head>
-        <style>${style}</style>
+        <title>${title}</title>
         <link rel="shortcut icon" href="favicon.ico">
         <link rel="manifest" href="manifest.json">
         <link rel="icon" type="png" sizes="512x512" href="splat-512.png">
@@ -28,7 +28,7 @@ export default ({ body, title, store, style }) => {
         <meta name="msapplication-starturl" content="/">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>${title}</title>
+        <style>${style}</style>
       </head>
       <body>
         <div id="app">${body}</div>
@@ -38,7 +38,7 @@ export default ({ body, title, store, style }) => {
             window.__PRELOADED_STATE__ = ${JSON.stringify(store).replace(/</g, '\\u003c')}
           </script>
           <script src="./dist/client.js"></script>
-          ` + (ENV === "development" ? `<script src="http://localhost:35729/livereload.js"></script>`:``) + `
+          ` + (ENV === "development" ? `<script src="http://localhost:35729/livereload.js"></script>` : ``) + `
       </body>
     </html>
   `;
