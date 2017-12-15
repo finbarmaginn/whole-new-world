@@ -18,6 +18,9 @@ import Footer from './components/Footer'
 import Home from './containers/Home'
 import Gallery from './containers/Gallery'
 import About from './containers/About'
+import * as OfflinePluginRuntime from 'offline-plugin/runtime';
+
+OfflinePluginRuntime.install();
 
 if (!window.Promise) {
   window.Promise = Promise
@@ -26,7 +29,7 @@ if (!window.Promise) {
 require('./icons/favicon.ico')
 require('./icons/splat-144.png')
 require('./icons/splat-512.png')
-require('./manifest.json')  
+require('./manifest.json')
 
 hydrate(
   <Provider store={store}>
