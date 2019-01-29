@@ -8,7 +8,7 @@
     "dev": "cross-env NODE_ENV=development webpack --watch --progress",
     "server": "cross-env NODE_ENV=production nodemon ./dist/server.js",
     "devServer": "cross-env NODE_ENV=development nodemon ./dist/server.js",
-    "start": "npm run prod && npm run server",
+    "start": "npm run prod && node ./dist/server.js",
     "startDev": "concurrently \"npm run dev\" \"npm run devServer\""
   },
   "repository": {
