@@ -24,6 +24,7 @@ const PORT = process.env.PORT || 8080,
     file: './src/app/scss/style.scss'
   });
 
+console.log(process.env.PORT)
 
 server.use('/dist', express.static('dist'));
 server.use('/favicon.ico', express.static('dist/assets/favicon.ico'));
