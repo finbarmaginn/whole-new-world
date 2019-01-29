@@ -57,6 +57,6 @@ server.get('*', (req, res) => {
     style: result.css.toString()
   }));
 });
-server.listen(PORT, function() {
-  console.log('Express server running at localhost:' + PORT)
+server.listen(process.env.PORT || 3000, () => {
+  console.log('Express server running at localhost:' + (process.env.PORT || 3000));
 });
