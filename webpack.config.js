@@ -43,6 +43,7 @@ var path = require('path'),
 
 var clientConfig = {
   name: 'client',
+  target: 'web',
   entry: {
     main: [
       SRC + '/app/browser.js'
