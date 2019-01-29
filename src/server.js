@@ -17,7 +17,7 @@ import Header from './app/components/Header'
 import Footer from './app/components/Footer'
 import sassExtract from 'sass-extract'
 
-const PORT = (process.env.PORT || 5000),
+const PORT = (process.env.PORT || ""),
   server = express(),
   sass = require('node-sass'),
   result = sass.renderSync({
