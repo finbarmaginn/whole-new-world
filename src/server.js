@@ -57,7 +57,7 @@ server.get('*', (req, res) => {
     style: result.css.toString()
   }));
 });
-console.log(JSON.stringify(process, null, 2))
+console.log(JSON.stringify(process.env, null, 2 ))
 server.listen(process.env.PORT || 3000, () => {
   console.log('Express server running at localhost:' + (process.env.PORT || 3000));
 });
